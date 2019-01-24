@@ -14,7 +14,7 @@ pipeline {
         stage('pretreatment') {
             steps {
                 setBuildStatus('Building','PENDING')
-                echo '------------------------------\n' +
+                echo '---------------------  ---------\n' +
                         '         pretreatment          ' +
                         '\n------------------------------'
             }
