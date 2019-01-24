@@ -16,13 +16,19 @@ pipeline {
                 setBuildStatus('Building','PENDING')
                 echo '------------------------------\n' +
                         '         pretreatment          ' +
-                        '\n-------------- ----------------'
+                        '\n------------------------------'
             }
         }
     }
     post {
         always {
             setBuildStatus("Build succeeded", "SUCCESS")
+        }
+        success {
+            setBuildStatus("Build succeeded", "SUCCESS")
+        }
+        failure {
+            setBuildStatus("Build failed", "FAILURE")
         }
     }
 }
