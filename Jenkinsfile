@@ -21,11 +21,8 @@ pipeline {
         }
     }
     post {
-        success {
+        always {
             setBuildStatus("Build succeeded", "SUCCESS")
-        }
-        failure {
-            setBuildStatus("Build failed", "FAILURE")
         }
     }
 }
