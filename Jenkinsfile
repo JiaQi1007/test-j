@@ -14,13 +14,16 @@ pipeline {
         stage('pretreatment') {
             steps {
                 setBuildStatus('Building','PENDING')
-                echo '------------------------------\n' +
+                echo '---------------------  ---------\n' +
                         '         pretreatment          ' +
                         '\n------------------------------'
             }
         }
     }
     post {
+        always {
+            setBuildStatus("Build succeeded", "SUCCESS")
+        }
         success {
             setBuildStatus("Build succeeded", "SUCCESS")
         }
